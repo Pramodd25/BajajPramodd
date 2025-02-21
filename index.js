@@ -19,10 +19,7 @@ app
         numbers.push(item);
       } else if (item.length === 1 && isNaN(item)) {
         alphabets.push(item);
-        if (
-          !highest_alphabet ||
-          item.toUpperCase() > highest_alphabet.toUpperCase()
-        ) {
+        if (!highest_alphabet || item.toUpperCase() > highest_alphabet.toUpperCase()) {
           highest_alphabet = item;
         }
       }
@@ -39,7 +36,8 @@ app
     });
   });
 
-const port = process.env.PORT || 3000;  // ✅ Uses the Render-assigned port
-  app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+// ✅ Use Render-assigned port
+const port = process.env.PORT || 3000;  
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`); // ✅ No "localhost" to avoid confusion
 });
