@@ -30,15 +30,16 @@ app
 
     res.json({
       is_success: true,
-      user_id: "Pramodd Komarneni",
-      email: "22BAI71198@cuchd.in",
-      roll_number: "22BAI71198",
+      user_id: "pramodd25",
+      email: "22bai71198@cuchd.in",
+      roll_number: "22bai71198",
       numbers: numbers,
       alphabets: alphabets,
+      highest_alphabet: highest_alphabet ? [highest_alphabet] : [],
     });
   });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const port = process.env.PORT || 3000;  // ✅ Uses the Render-assigned port
+  app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
